@@ -1,0 +1,25 @@
+{
+  
+  "name": "Phishing Detection",
+  "version": "1.0.0",
+  "description": "This extension is developed by G1 Group MIT which helps to avoid accessing Phishing websites by giving warning message",
+  "permissions": ["activeTab","declarativeContent", "storage", "webNavigation"],
+  
+  "action": {
+    "default_title": "DetecPhis",
+    "default_popup": "plugin_ui.html"
+  },
+  "content_scripts":[
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/jquery.js","js/features.js"],
+      "run_at": "document_end"
+    }
+  ],
+
+  "background": {
+    "service_worker": "js/background.js"
+  
+  },
+  "manifest_version": 3  
+}
